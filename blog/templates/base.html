@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun For Every Time</title>
+    <link rel="shortcut icon" type="image/png" href="https://scontent.fbom17-1.fna.fbcdn.net/v/t1.0-9/100616844_119792403078772_2963371110315327488_n.jpg?_nc_cat=108&_nc_sid=09cbfe&_nc_ohc=8jBcWyd80BMAX9p26s_&_nc_ht=scontent.fbom17-1.fna&oh=e6d07643254cf3855af8a6e07baf1145&oe=5EF61F70">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+
+    {% block css %}
+    {% endblock css %}
+    
 </head>
 
 <body>
@@ -16,7 +22,7 @@
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
                 <a class="mr-5 hover:text-gray-900" href="/">Home</a>
-                <a class="mr-5 hover:text-gray-900" href="/blogs">Privacy Policy</a>
+                <a class="mr-5 hover:text-gray-900" href="/privacypolices">Privacy Policy</a>
                 <a class="mr-5 hover:text-gray-900" href="/contactus">Contact Us</a>
                 <a class="hover:text-gray-900" href="/aboutus">About Us</a>
             </nav>
@@ -166,6 +172,10 @@
             </div>
         </div>
     </footer>
+
+
+    {% block js %}
+    {% endblock js %}
 
     <!-- footer end -->
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>

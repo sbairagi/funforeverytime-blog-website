@@ -8,10 +8,14 @@
     <div class="text-center lg:w-2/3 w-full">
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{{post.title}}</h1>
       <p class="blog-post-meta"> {{post.timestamp}} by <a href="/about">{{post.auther}}</a> (<span>{{post.views}} views</span>) </p>
-      <div class="fb-like m-4" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+      <div class="my-3">
+      <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+      </div>
       <p class="mb-8 leading-relaxed">{{post.content|safe}}</p>
+      <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
       <div class="flex justify-center">
         <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width=""></div>
+        </div>
       </div>
     </div>
   </div>
