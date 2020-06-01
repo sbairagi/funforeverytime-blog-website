@@ -92,22 +92,32 @@
 
 
 
-<section class="text-gray-700 body-font ">
-  <div class="container px-5 py-24 mx-auto ">
 
-    <div class="flex items-center flex-wrap ">
-      {% for i in paginator.page_range %}
-      <a href="?page={{i}}"
-        class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0 mx-1">{{i}}
-    </a>
+<section class="text-gray-700 body-font">
+<div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+  <div class="text-center lg:w-2/3 w-full">
+    <div class="flex justify-center">
+      {% if page_obj.has_previous %}
+      
+          <a href="?page=1" class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0 mx-1">&laquo; first</a>
+          <a href="?page={{ page_obj.previous_page_number }}" class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0 mx-1">previous</a>
+      
+      {% endif %}
 
-      {% endfor %}
+      <span class="current" class="inline-flex text-x2 items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0 mx-1">
+          Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+      </span>
+
+      {% if page_obj.has_next %}
+      
+          <a href="?page={{ page_obj.next_page_number }}" class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0 mx-1">next</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}" class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0 mx-1">last &raquo;</a>
+      
+      {% endif %}
     </div>
-
   </div>
+</div>
 </section>
-
-
 
 <!-- blog slider end -->
 
